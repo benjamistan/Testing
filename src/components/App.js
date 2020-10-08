@@ -5,7 +5,7 @@ import CommentList from 'components/CommentList';
 
 export default () => {
     return (
-        <div>
+        <div className="ui container">
             <CommentBox />
             <CommentList />
         </div>

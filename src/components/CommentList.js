@@ -9,7 +9,6 @@ class CommentList extends Component {
         })
     }
     
-    
     render() {
         return (
             <div>
