@@ -11,7 +11,8 @@ class CommentList extends Component {
     
     render() {
         return (
-            <div>
+            <div className="ui sizer vertical segment">
+                <h1 className="ui large header">Comment List</h1>
                 <ul>
                     {this.renderComments()}
                 </ul>

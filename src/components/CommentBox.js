@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
+import requireAuth from 'components/requireAuth';
 
 class CommentBox extends Component {
     state = { comment: '' };
@@ -20,7 +21,7 @@ class CommentBox extends Component {
         return (
             <div className="ui sizer vertical segment">
                 <form className="ui form" onSubmit={this.handleSubmit}>
-                    <h1 className="ui large header">Add a Comment</h1>
+                    <h1 className="ui large header">Comment Box</h1>
                     <textarea
                         className="field"
                         onChange={this.handleChange}
@@ -30,15 +31,17 @@ class CommentBox extends Component {
                         <button className="ui primary button">Submit Comment</button>
                     </div>
                 </form>
-                {/* <button
+                <button
                     className="fetch-comments ui secondary button"
                     style={{marginTop: "5px"}}
                     onClick={this.props.fetchComments}>
                         Fetch Comments
-                </button> */}
+                </button>
             </div>
         );
     }
 }
 
-export default connect(null, actions)(CommentBox);
+
+
+export default connect(null, actions)(requireAuth(CommentBox));
